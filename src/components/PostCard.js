@@ -15,7 +15,7 @@ function PostCard({ post: { body, createAt, id, username, likeCount, commentCoun
     return (
         <Card>
             <Card.Content>
-                <Card.Header>{username}</Card.Header>
+                <Card.Header>{body}</Card.Header>
                 <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createAt).fromNow(true)}</Card.Meta>
                 <Card.Description>
                     {body}
