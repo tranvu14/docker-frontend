@@ -2,8 +2,10 @@ import React, { useState , useContext} from "react"
 import { Form, Button } from "semantic-ui-react";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+
 import { useForm } from "../untils/hooks";
 import { AuthContext  } from "./../untils/auth";
+
 function Login(props) {
     const context = useContext(AuthContext)
     const [errors, setErrors] = useState({});
@@ -79,8 +81,8 @@ const LOGIN_USER = gql`
         $password : String!
     ){
         login(
-              username : $username
-                password : $password   
+            username : $username
+            password : $password   
         ){
             id 
             email
