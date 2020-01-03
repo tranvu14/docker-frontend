@@ -5,7 +5,7 @@ import moment from "moment";
 import { AuthContext } from '../untils/auth'
 import LikeButton from './LikeButton'
 
-function PostCard({ post: { body, createAt, id, username, likeCount, commentCount, likes } }) {
+function PostCard({ post: { body, createAt, id, likeCount, commentCount, likes } }) {
     const { user } = useContext(AuthContext)
 
     function likePost() {
@@ -13,9 +13,9 @@ function PostCard({ post: { body, createAt, id, username, likeCount, commentCoun
     }
 
     return (
-        <Card>
+        <Card fluid>
             <Card.Content>
-                <Card.Header>{username}</Card.Header>
+                <Card.Header>{body}</Card.Header>
                 <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createAt).fromNow(true)}</Card.Meta>
                 <Card.Description>
                     {body}

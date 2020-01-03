@@ -36,7 +36,7 @@ function Login(props) {
     return (
         <div className="form-container">
             <Form onSubmit={(e) => onSubmit(e)} noValidate className={loading ? 'loading' : ''}>
-                <h1 >Login</h1>
+                <h1 >Hãy đăng nhập bằng mã code ở phía sau cuốn sách của bạn</h1>
                 <Form.Input
                     label="Usermame"
                     placeholder="Username"
