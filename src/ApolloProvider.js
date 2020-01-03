@@ -7,7 +7,7 @@ import { ApolloProvider } from '@apollo/react-hooks'
 import { setContext } from 'apollo-link-context'
 import  {onError} from 'apollo-link-error'
 const httpLink = createHttpLink({
-    uri: 'http://localhost:5000/graphql'
+    uri: 'https://floating-meadow-89727.herokuapp.com/'
 })
 const authLink = setContext(() => {
     const token = localStorage.getItem('jwtToken')
