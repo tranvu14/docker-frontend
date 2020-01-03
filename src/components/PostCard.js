@@ -8,10 +8,6 @@ import LikeButton from './LikeButton'
 function PostCard({ post: { body, createAt, id, likeCount, commentCount, likes } }) {
     const { user } = useContext(AuthContext)
 
-    function likePost() {
-        console.log('like');
-    }
-
     return (
         <Card fluid>
             <Card.Content>
