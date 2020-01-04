@@ -72,6 +72,7 @@ const LOGIN_USER = gql`
         ){
             id 
             username
+            token
         }
     }
 `

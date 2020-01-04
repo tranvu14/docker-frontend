@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import gql from 'graphql-tag';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks';
 
 import {
     Button,
@@ -15,7 +15,7 @@ import {
 import { AuthContext } from '../untils/auth';
 import LikeButton from './LikeButton';
 // import DeleteButton from '../components/DeleteButton';
-// import MyPopup from '../util/MyPopup';
+//import MyPopup from '../untils/MyPopup';
 
 function SinglePost(props) {
     const postId = props.match.params.postId;
@@ -129,7 +129,7 @@ const FETCH_POST_QUERY = gql`
     getPost(postId: $postId) {
       id
       body
-      createdt
+      createdAt
       username
       likeCount
       likes {

@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useQuery } from "@apollo/react-hooks";
 import { Grid, Transition } from "semantic-ui-react";
 import PostCard from "./PostCard"
 import {FETCH_POSTS_QUERY} from '../Queries/queries'
-
+import { AuthContext } from '../untils/auth';
 function Home() {
-
+    const { user } = useContext(AuthContext);
     const { 
         loading,
         data
