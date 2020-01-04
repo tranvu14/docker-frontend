@@ -85,10 +85,7 @@ const LOGIN_USER = gql`
             password : $password   
         ){
             id 
-            email
             username
-            createAt
-            token  
         }
     }
 `
