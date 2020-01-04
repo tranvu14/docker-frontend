@@ -12,7 +12,6 @@ function Login(props) {
 
     const { onChange, onSubmit, values } = useForm(loginUserCallback, {
         username: '',
-        password: '',
     });
 
     const [LoginUser, { loading }] = useMutation(LOGIN_USER, {
@@ -48,17 +47,6 @@ function Login(props) {
                     value={values.username}
                     onChange={(e) => onChange(e)}
                 />
-                <Form.Input
-                    label="Password"
-                    placeholder="Password.."
-                    name="password"
-                    type="password"
-                    error={errors.password ? true : false}
-                    value={values.password}
-
-                    onChange={(e) => onChange(e)}
-                />
-
                 <Button type="submit" primary>Login</Button>
             </Form>
             {Object.keys(errors).length > 0 && (
@@ -78,11 +66,9 @@ function Login(props) {
 const LOGIN_USER = gql`
     mutation login(
         $username : String!
-        $password : String!
     ){
         login(
-            username : $username
-            password : $password   
+            username : $username  
         ){
             id 
             username
