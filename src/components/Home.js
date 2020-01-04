@@ -1,14 +1,11 @@
-import React, { useContext } from "react"
+import React from "react"
 import { useQuery } from "@apollo/react-hooks";
 import { Grid, Transition } from "semantic-ui-react";
-
-import { AuthContext } from '../untils/auth'
 import PostCard from "./PostCard"
-import PostForm from "./PostForm"
 import {FETCH_POSTS_QUERY} from '../Queries/queries'
 
 function Home() {
-    const { user } = useContext(AuthContext)
+
     const { 
         loading,
         data
@@ -21,12 +18,6 @@ function Home() {
                 </Grid.Row>
 
                 <Grid.Row>
-                    {user && (
-                        <Grid.Column>
-                            <PostForm/>
-                        </Grid.Column>
-
-                    )}
                     {loading ? (
                         <h1>Loading posts...</h1>
                     ) : (

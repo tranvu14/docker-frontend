@@ -25,9 +25,8 @@ function Login(props) {
             props.history.push('/');
         },
         onError(err) {
-            // setErrors(err.graphQLErrors[0].extensions.exception.errors);
-            console.log(err)
-        },
+            setErrors(err.graphQLErrors[0].extensions.exception.errors);
+          },
         variables: values
     });
 
@@ -40,8 +39,8 @@ function Login(props) {
             <Form onSubmit={(e) => onSubmit(e)} noValidate className={loading ? 'loading' : ''}>
                 <h1 >Hãy đăng nhập bằng mã code ở phía sau cuốn sách của bạn</h1>
                 <Form.Input
-                    label="Usermame"
-                    placeholder="Username"
+                    label="Code"
+                    placeholder="Code"
                     name="username"
                     type="text"
                     error={errors.username ? true : false}
