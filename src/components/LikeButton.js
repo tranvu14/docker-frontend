@@ -11,7 +11,7 @@ import MyPopup from '../untils/MyPopup';
 function LikeButton({user, post: { id, likeCount, likes } }) {
     const [liked, setLike] = useState(false);
     useEffect(() => {
-        if (user && likes.find(like => like.username === user.username)) {
+        if (user && likes.find((like) => like.username === user.username)) {
             setLike(true)
         }
         else setLike(false)

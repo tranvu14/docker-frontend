@@ -11,6 +11,7 @@ const AuthContext = createContext({
 });
 
 function authReducer(state, action) {
+  console.log(user)
   switch (action.type) {
     case 'LOGIN':
       return {
