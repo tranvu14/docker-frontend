@@ -6,9 +6,6 @@ COPY . .
 
 RUN npm install
 
-CMD ["npm", "start"]
+USER node
 
-RUN addgroup -g 1901 appgroup
-RUN adduser -D -u 1000 appuser -G appgroup
-RUN chown -R appuser:appgroup /app
-USER appuser
+CMD ["npm", "start"]
